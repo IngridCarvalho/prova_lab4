@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -39,42 +41,52 @@ public class tela extends JFrame{
 		
 		JButton bt1 = new JButton();
 		bt1.setText("Botão 1");
+		bt1.addActionListener(new AddTextButton());
 		westPanel.add(bt1);
 		
 		JButton bt2 = new JButton();
 		bt2.setText("Botão 2");
+		bt2.addActionListener(new AddTextButton());
 		westPanel.add(bt2);
 		
 		JButton bt3 = new JButton();
 		bt3.setText("Botão 3");
+		bt3.addActionListener(new AddTextButton());
 		westPanel.add(bt3);
 		
 		JButton bt4 = new JButton();
 		bt4.setText("Botão 4");
+		bt4.addActionListener(new AddTextButton());
 		westPanel.add(bt4);
 		
 		JButton bt5 = new JButton();
 		bt5.setText("Botão 5");
+		bt5.addActionListener(new AddTextButton());
 		westPanel.add(bt5);
 		
 		JButton bt6 = new JButton();
 		bt6.setText("Botão 6");
+		bt6.addActionListener(new AddTextButton());
 		westPanel.add(bt6);
 		
 		JButton bt7 = new JButton();
 		bt7.setText("Botão 7");
+		bt7.addActionListener(new AddTextButton());
 		westPanel.add(bt7);
 		
 		JButton bt8 = new JButton();
 		bt8.setText("Botão 8");
+		bt8.addActionListener(new AddTextButton());
 		westPanel.add(bt8);
 		
 		JButton bt9 = new JButton();
 		bt9.setText("Botão 9");
+		bt9.addActionListener(new AddTextButton());
 		westPanel.add(bt9);
 		
 		JButton bt10 = new JButton();
 		bt10.setText("Botão 10");
+		bt10.addActionListener(new AddTextButton());
 		westPanel.add(bt10);
 		
 		JPanel centerPanel = new JPanel();
@@ -143,18 +155,26 @@ public class tela extends JFrame{
 		JTable tabela = new JTable(data, columnNames);
 		
 		JScrollPane scroll = new JScrollPane(tabela);
-		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
-		scroll.setPreferredSize(new Dimension(400,200));
+		scroll.setPreferredSize(new Dimension(300,100));
 		gbc.gridx = 0;
 		gbc.gridy = 3;
 		gbc.anchor = GridBagConstraints.CENTER;
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.gridwidth = 2;
-		gbc.insets = new Insets(15, 15, 15, 15);
 		gbc.weightx = 1.0;
 		centerPanel.add(scroll, gbc);
+		
+		
+	}
+	
+	public class AddTextButton implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Eu sou o responsável pelo meu futuro!");
+			
+		}
 		
 	}
 }
